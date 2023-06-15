@@ -12,15 +12,16 @@ set -e
 #push_branch=gh-pages # 推送的分支
 
 # 生成静态文件
-#npm run build
+npm run build
 
 # 进入生成的文件夹
-#cd $dist_path
+cd docs/.vuepress/dist
 
-#git init
-#git add -A
-#git commit -m "deploy, $commit_info"
-#git push -f $push_addr HEAD:$push_branch
+git init
+git add -A
+git commit -m "deploy"
 
-#cd -
-#rm -rf $dist_path
+# 如果你想要部署到 https://zengdaojun.github.io
+git push -f git@github.com:zengdaojun/zengdaojun.github.io.git master
+
+cd -
